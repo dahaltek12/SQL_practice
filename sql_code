@@ -1,0 +1,13 @@
+
+SELECT a.district, c.email 
+FROM address a
+LEFT JOIN customer c ON a.address_id = c.address_id
+WHERE a.district = 'California';
+
+--find all the movies in which Nick Wahlberg is the actor
+
+SELECT  f.title, a.first_name, a.last_name
+FROM actor a
+LEFT JOIN film_actor fa ON a.actor_id = fa.actor_id
+RIGHT JOIN film f ON f.film_id = fa.film_id
+WHERE a.first_name = 'Nick' AND a.last_name = 'Wahlberg';
